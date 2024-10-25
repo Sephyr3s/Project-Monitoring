@@ -1,0 +1,26 @@
+<h2 mat-dialog-title style="align-content: center; text-align: center;">
+  Crear Proyecto
+  <div style="position: absolute; right: 16px; top: 16px;">
+    <button mat-icon-button color="accent" (click)="onNoClick()" style="margin-left: 16px;">
+      <mat-icon class="mat-18">close</mat-icon>
+    </button>
+  </div>
+</h2>
+<div mat-dialog-content>
+  <div style="margin-bottom: 8px;">
+    <label>Nombre</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput [(ngModel)]="project.name" required>
+    </mat-form-field>
+  </div>
+  <div style="margin-bottom: 8px;">
+    <label>Descripción</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <textarea matInput [(ngModel)]="project.description" rows="3" required></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions style="justify-content: end;">
+  <button mat-raised-button color="primary" (click)="onSaveClick()">Aceptar</button>
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+</div>

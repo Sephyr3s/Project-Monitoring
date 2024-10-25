@@ -1,0 +1,49 @@
+<h2 mat-dialog-title style="align-content: center; text-align: center;">
+  Editar Tarea
+  <div style="position: absolute; right: 16px; top: 16px;">
+    <button mat-icon-button color="accent" aria-label="trashButtom" (click)="onDeleteClick()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" (click)="onNoClick()" style="margin-left: 4px;">
+      <mat-icon class="mat-18">close</mat-icon>
+    </button>
+  </div>
+</h2>
+<div mat-dialog-content>
+  <div style="margin-bottom: 8px;">
+    <label>Nombre</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <input matInput [(ngModel)]="task.name" required>
+    </mat-form-field>
+  </div>
+  <div style="margin-bottom: 8px;">
+    <label>Proyecto</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-select [(ngModel)]="task.project" required>
+        <mat-option *ngFor="let project of projects" [value]="project.name">
+          {{ project.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div style="margin-bottom: 8px;">
+    <label>Descripción</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <textarea matInput [(ngModel)]="task.description" rows="3" required></textarea>
+    </mat-form-field>
+  </div>
+  <div style="margin-bottom: 8px;">
+    <label>Estado</label>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-select [(ngModel)]="task.status" required>
+        <mat-option value="Pendiente">Pendiente</mat-option>
+        <mat-option value="Iniciada">Iniciada</mat-option>
+        <mat-option value="Completada">Completada</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions style="justify-content: end;">
+  <button mat-raised-button color="primary" (click)="onSaveClick()">Aceptar</button>
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+</div>

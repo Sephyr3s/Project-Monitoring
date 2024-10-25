@@ -1,0 +1,35 @@
+<shared-logout-button></shared-logout-button>
+<shared-navigation-buttons></shared-navigation-buttons>
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+      <td mat-cell *matCellDef="let project" style="text-align: center;"class="mat-column-name"> {{project.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="taskCount">
+      <th mat-header-cell *matHeaderCellDef style="text-align: left;"> # Tareas </th>
+      <td mat-cell *matCellDef="let project" class="mat-column-taskCount" style="text-align: center;"> {{getTaskCount(project.name)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action" class="mat-column-action">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;">
+        <button mat-icon-button color="primary" (click)="nuevoProyecto()" [disabled]="!isAdmin"
+        >
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </th>
+      <td mat-cell *matCellDef="let project" class="mat-column-Editar">
+        <button mat-icon-button color="accent" (click)="editarProyecto(project)" [disabled]="!isAdmin"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

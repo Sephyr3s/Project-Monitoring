@@ -1,0 +1,16 @@
+<div style="justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <h2 style="text-align: center; margin-top: 150px; margin-bottom: 80px;">Login</h2>
+
+  <mat-form-field appearance="fill" style="width: 300px; margin-left: 700px;">
+    <mat-label>Usuario</mat-label>
+    <input matInput [(ngModel)]="username" placeholder="Usuario">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 300px; margin-left: 700px;">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [(ngModel)]="password" type="password" placeholder="Contraseña">
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" (click)="login()" style=" margin-left: 800px; margin-top: 10px;">Login</button>
+  <p *ngIf="errorMessage" style="color: red;margin-left: 700px; margin-top: 8px; ">{{ errorMessage }} </p>
+</div>

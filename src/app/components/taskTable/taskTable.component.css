@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.mat-mdc-table {
+  width: 100%;
+}
+.mat-column-Nombre, .mat-column-Descripcion, .mat-column-Estado, .mat-column-Editar, .mat-column-Project {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mat-column-Nombre {
+  max-width: 200px; /* Ajusta este valor según tus necesidades */
+}
+.mat-column-Descripcion {
+  max-width: 350px; /* Ajusta este valor según tus necesidades */
+}
+.mat-column-Estado {
+  width: 20px; /* Ajusta este valor según tus necesidades */
+}
+.mat-column-Editar {
+  max-width: 5px; /* Ajusta este valor según tus necesidades */
+   /* Ajusta este valor para acercar la columna de acciones */
+}
+.mat-column-Project{
+  width: 40px;
+}
+
+.resumen p {
+  margin: 0;
+  padding: 4px;
+  text-align: center;
+}
+
+.resumen-row {
+  background-color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  border-radius: 0; /* Hace que los bordes sean cuadrados */
+}
+
+.mat-paginator {
+  margin-top: -190px; /* Reduce la distancia entre la tabla y el paginador */
+}

@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.mat-mdc-table {
+  width: 100%;
+}
+.mat-column-name, .mat-column-taskCount, .mat-column-action {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mat-column-name {
+  width: 400px;
+  text-align: center; /* Ajusta este valor según tus necesidades */
+}
+.mat-column-taskCount {
+  max-width: 350px; /* Ajusta este valor según tus necesidades */
+}
+.mat-column-action {
+  max-width: 120px; /* Ajusta este valor según tus necesidades */
+   /* Ajusta este valor para acercar la columna de acciones */
+}
+
+.custom-dialog-container {
+  border-radius: 0; /* Elimina los bordes redondeados */
+/* Ajusta la altura según tus necesidades */
+}
